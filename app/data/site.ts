@@ -1,5 +1,4 @@
 export const links = {
-  email: 'mostafasafwat404@gmail.com',
   linkedin: 'https://www.linkedin.com/in/mostafa-safwat-95198323b',
   github: 'https://github.com/Mostafa-Safwat',
   cv: '/cv.pdf',

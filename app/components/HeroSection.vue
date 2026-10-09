@@ -12,7 +12,6 @@
       <div class="socials">
         <a :href="links.linkedin">LinkedIn</a>
         <a :href="links.github">GitHub</a>
-        <a :href="`mailto:${links.email}`">{{ links.email }}</a>
       </div>
     </div>
     <div class="card-wrap">
