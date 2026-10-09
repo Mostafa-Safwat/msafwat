@@ -49,8 +49,6 @@ export const jimber = {
 export const snipscribe = {
   label: 'Featured · Graduation project',
   title: 'Snipscribe: AI-Powered Video Summarization Platform',
-  image: '/images/snipscribe.webp',
-  imageAlt: 'Snipscribe landing page: "Watch Less & Learn More, AI Summarization for Smarter Viewing"',
   points: [
     'Developed a full-stack web platform that transcribes, summarizes, and translates YouTube videos using state-of-the-art AI models: OpenAI Whisper for transcription and Qwen3 LLM for summarization and translation.',
     'Built a NestJS backend and integrated email/in-app notifications to enhance user engagement.',

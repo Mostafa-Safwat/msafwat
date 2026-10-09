@@ -11,7 +11,7 @@
       </div>
       <div class="socials">
         <a :href="links.linkedin">LinkedIn</a>
-        <a :href="links.github">GitHub</a>
+        <a :href="links.github" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
       </div>
     </div>
     <div class="card-wrap">

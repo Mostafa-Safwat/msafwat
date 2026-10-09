@@ -4,7 +4,7 @@
     <div class="featured">
       <OrangeCat />
       <div class="shot">
-        <img :src="snipscribe.image" :alt="snipscribe.imageAlt" width="1200" height="750" loading="lazy">
+        <SnipscribePreview />
       </div>
       <div class="info">
         <div class="info-head">
@@ -18,7 +18,7 @@
           <div class="tags">
             <span v-for="t in snipscribe.tech" :key="t" class="tag">{{ t }}</span>
           </div>
-          <a :href="snipscribe.repo" class="repo">GitHub →<span class="sr-only"> (Snipscribe)</span></a>
+          <a :href="snipscribe.repo" class="repo" target="_blank" rel="noopener">GitHub →<span class="sr-only"> (Snipscribe, opens in a new tab)</span></a>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
         <h3 class="name">{{ p.name }}</h3>
         <p class="desc">{{ p.desc }}</p>
         <div class="tech">{{ p.tech }}</div>
-        <a :href="p.repo" class="repo">GitHub →<span class="sr-only"> ({{ p.name }})</span></a>
+        <a :href="p.repo" class="repo" target="_blank" rel="noopener">GitHub →<span class="sr-only"> ({{ p.name }}, opens in a new tab)</span></a>
       </div>
     </div>
   </section>
@@ -53,17 +53,8 @@
     box-shadow: 8px 8px 0 var(--pink);
   }
   .shot {
-    aspect-ratio: 2 / 1;
     border-bottom: 2.5px solid var(--ink);
-    background: var(--bg);
     overflow: hidden;
-  }
-  .shot img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
   }
   .info {
     padding: clamp(22px, 4vw, 36px);

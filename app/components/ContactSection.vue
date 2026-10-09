@@ -4,7 +4,7 @@
     <p class="sub">Open to remote full stack, frontend and backend roles.</p>
     <div class="ctas">
       <a :href="links.linkedin" class="btn btn-yel">LinkedIn</a>
-      <a :href="links.github" class="btn btn-yel">GitHub</a>
+      <a :href="links.github" class="btn btn-yel" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
       <a :href="links.cv" download class="btn btn-white">Download CV</a>
     </div>
     <form class="form" @submit.prevent="send">
