@@ -15,7 +15,7 @@
         <label>Leave this empty<input v-model="form.website" name="website" tabindex="-1" autocomplete="off"></label>
       </div>
       <div class="footer">
-        <button type="submit" class="submit" :disabled="sending">Send message</button>
+        <button type="submit" class="btn submit" :disabled="sending">Send message</button>
         <span class="note" role="status" aria-live="polite">{{ note }}</span>
       </div>
     </form>
@@ -73,7 +73,7 @@
   }
   .sub { margin: 0; font-size: 21px; font-weight: 500 }
   .ctas { display: flex; gap: 12px; flex-wrap: wrap }
-  .btn { padding: calc(12px - var(--nudge)) 20px calc(12px + var(--nudge)); border-color: #17141a; box-shadow: 4px 4px 0 #17141a }
+  .btn { padding: calc(12px - var(--nudge)) 20px calc(12px + var(--nudge)) }
   .btn-yel { background: var(--yel) }
   .btn-white { background: #fff }
   .form {
@@ -119,10 +119,7 @@
     font-size: 17px;
     font-weight: 700;
     background: oklch(0.85 0.15 145);
-    color: #17141a;
     padding: calc(12px - var(--nudge)) 24px calc(12px + var(--nudge));
-    border: 2.5px solid #17141a;
-    box-shadow: 4px 4px 0 #17141a;
   }
   .submit:disabled { cursor: progress; opacity: .7 }
   .note { font-size: 14px; color: #5c5560 }

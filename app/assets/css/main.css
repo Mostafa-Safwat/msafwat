@@ -41,6 +41,7 @@ a:hover { opacity: .75 }
 }
 
 .btn {
+  display: inline-block;
   font-size: 17px;
   text-decoration: none;
   padding: calc(12px - var(--nudge)) 22px calc(12px + var(--nudge));
@@ -48,6 +49,17 @@ a:hover { opacity: .75 }
   color: #17141a;
   border: 2.5px solid var(--ink);
   box-shadow: 4px 4px 0 var(--ink);
+  transition: transform .12s ease-out, box-shadow .12s ease-out;
+}
+/* Buttons press toward their shadow instead of fading. */
+.btn:not(:disabled):hover {
+  opacity: 1;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.btn:not(:disabled):active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--ink);
 }
 
 .tags { display: flex; gap: 8px; flex-wrap: wrap }
