@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 const schema = z.object({
   name: z.string().trim().min(1, 'Please tell me your name.').max(80, 'Please keep your name under 80 characters.'),
-  email: z.string().trim().max(254, 'That email is too long.').email('That email does not look right.'),
+  email: z.string().trim().max(254, 'That email is too long.').pipe(z.email('That email does not look right.')),
   message: z.string().trim().min(10, 'Please write at least a sentence.').max(2000, 'Please keep it under 2,000 characters.'),
 })
 

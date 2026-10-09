@@ -10,7 +10,10 @@
     <form class="form" @submit.prevent="send">
       <label class="field">Name<input v-model="form.name" name="name" autocomplete="name" maxlength="80" required></label>
       <label class="field">Email<input v-model="form.email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
-      <label class="field wide">Message<textarea v-model="form.message" name="message" rows="5" maxlength="2000" required /></label>
+      <label class="field wide">Message<textarea v-model="form.message" name="message" rows="5" :maxlength="MESSAGE_MAX" aria-describedby="message-count" required /></label>
+      <span id="message-count" class="count wide" :class="{ full: form.message.length >= MESSAGE_MAX }">
+        {{ form.message.length.toLocaleString('en-US') }} / {{ MESSAGE_MAX.toLocaleString('en-US') }} characters
+      </span>
       <div class="honeypot" aria-hidden="true">
         <label>Leave this empty<input v-model="form.website" name="website" tabindex="-1" autocomplete="off"></label>
       </div>
@@ -25,6 +28,7 @@
 <script setup lang="ts">
   import { links } from '~/data/site'
 
+  const MESSAGE_MAX = 2000
   const form = reactive({ name: '', email: '', message: '', website: '' })
   const note = ref('')
   const sending = ref(false)
@@ -105,6 +109,14 @@
   }
   .field textarea { resize: vertical }
   .wide { grid-column: 1 / -1 }
+  .count {
+    justify-self: end;
+    margin-top: -8px;
+    font-size: 14px;
+    color: #5c5560;
+    font-variant-numeric: tabular-nums;
+  }
+  .count.full { color: #17141a; font-weight: 700 }
   .honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden }
   .footer {
     grid-column: 1 / -1;

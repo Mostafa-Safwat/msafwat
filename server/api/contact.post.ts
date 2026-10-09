@@ -1,6 +1,13 @@
 const limiter = createRateLimiter({ limit: 5, windowMs: 10 * 60 * 1000 })
+const MAX_BODY_BYTES = 16 * 1024
 
 export default defineEventHandler(async (event) => {
+  const length = Number(getRequestHeader(event, 'content-length'))
+  if (!(length > 0 && length <= MAX_BODY_BYTES)) {
+    setResponseStatus(event, 413)
+    return { ok: false, error: 'too_large' }
+  }
+
   const body = await readBody(event).catch(() => null)
 
   if (isBot(body)) {
