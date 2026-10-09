@@ -37,7 +37,7 @@
     align-self: flex-start;
     background: var(--yel);
     color: #17141a;
-    padding: 4px 12px;
+    padding: calc(4px - var(--nudge)) 12px calc(4px + var(--nudge));
     font-weight: 700;
     font-size: 14px;
     transform: rotate(-2deg);

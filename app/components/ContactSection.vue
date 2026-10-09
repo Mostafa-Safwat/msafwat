@@ -73,7 +73,7 @@
   }
   .sub { margin: 0; font-size: 21px; font-weight: 500 }
   .ctas { display: flex; gap: 12px; flex-wrap: wrap }
-  .btn { padding: 12px 20px; border-color: #17141a; box-shadow: 4px 4px 0 #17141a }
+  .btn { padding: calc(12px - var(--nudge)) 20px calc(12px + var(--nudge)); border-color: #17141a; box-shadow: 4px 4px 0 #17141a }
   .btn-yel { background: var(--yel) }
   .btn-white { background: #fff }
   .form {
@@ -98,7 +98,7 @@
   .field textarea {
     font: inherit;
     font-weight: 500;
-    padding: 10px 12px;
+    padding: calc(10px - var(--nudge)) 12px calc(10px + var(--nudge));
     border: 2px solid #17141a;
     background: #fffdf8;
     color: #17141a;
@@ -120,7 +120,7 @@
     font-weight: 700;
     background: oklch(0.85 0.15 145);
     color: #17141a;
-    padding: 12px 24px;
+    padding: calc(12px - var(--nudge)) 24px calc(12px + var(--nudge));
     border: 2.5px solid #17141a;
     box-shadow: 4px 4px 0 #17141a;
   }

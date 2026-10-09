@@ -74,7 +74,7 @@
     color: #17141a;
     border: 2.5px solid #17141a;
     box-shadow: 3px 3px 0 #17141a;
-    padding: 8px 14px;
+    padding: calc(8px - var(--nudge)) 14px calc(8px + var(--nudge));
     min-height: 44px;
   }
   .menu-btn.open { background: #ffd43b }
@@ -114,7 +114,7 @@
     text-align: center;
     background: oklch(0.85 0.15 145);
     color: #17141a;
-    padding: 12px;
+    padding: calc(12px - var(--nudge)) 12px calc(12px + var(--nudge));
     font-weight: 700;
     border: 2.5px solid #17141a;
     box-shadow: 3px 3px 0 #17141a;

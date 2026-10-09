@@ -89,7 +89,7 @@
     align-self: flex-start;
     background: var(--pink);
     color: #17141a;
-    padding: 3px 10px;
+    padding: calc(3px - var(--nudge)) 10px calc(3px + var(--nudge));
     font-weight: 700;
     font-size: 13px;
   }

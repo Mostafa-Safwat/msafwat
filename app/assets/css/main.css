@@ -9,6 +9,10 @@
   --dot: rgba(23, 20, 26, .09);
   --display: 'Dela Gothic One', sans-serif;
   --body: 'Zen Kaku Gothic New', system-ui, sans-serif;
+  /* Zen Kaku Gothic New sets capitals 0.085em below the middle of the line box
+     (ascent 1.16, descent .29, cap height .70). Single-line boxes move that much
+     padding from top to bottom so their text sits in the true middle. */
+  --nudge: .085em;
 }
 
 html { scroll-behavior: smooth }
@@ -39,7 +43,7 @@ a:hover { opacity: .75 }
 .btn {
   font-size: 17px;
   text-decoration: none;
-  padding: 12px 22px;
+  padding: calc(12px - var(--nudge)) 22px calc(12px + var(--nudge));
   font-weight: 700;
   color: #17141a;
   border: 2.5px solid var(--ink);
@@ -49,7 +53,7 @@ a:hover { opacity: .75 }
 .tags { display: flex; gap: 8px; flex-wrap: wrap }
 .tag {
   border: 2px solid var(--ink);
-  padding: 2px 10px;
+  padding: calc(2px - var(--nudge)) 10px calc(2px + var(--nudge));
   font-size: 14px;
   font-weight: 700;
 }
