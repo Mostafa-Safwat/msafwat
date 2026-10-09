@@ -35,7 +35,7 @@
     box-shadow: 5px 5px 0 var(--yel);
     padding: 22px;
   }
-  .school { font-weight: 700; font-size: 19px }
+  .school { font-weight: 700; font-size: 21px }
   .degree { color: var(--mut) }
   .certs { display: flex; flex-direction: column }
   .cert { padding: 9px 0; border-bottom: 2px solid var(--ink) }

@@ -57,8 +57,8 @@
   function pet() {
     clearTimeout(timer)
     purring.value = true
-    timer = setTimeout(() => { purring.value = false }, 2600)
-    purr()
+    // Keep the face and hearts going for exactly as long as the purr sounds.
+    timer = setTimeout(() => { purring.value = false }, purr())
   }
 
   onBeforeUnmount(() => clearTimeout(timer))

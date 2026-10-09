@@ -71,7 +71,7 @@
     font-size: clamp(34px, 6vw, 64px);
     line-height: 1;
   }
-  .sub { margin: 0; font-size: 19px; font-weight: 500 }
+  .sub { margin: 0; font-size: 21px; font-weight: 500 }
   .ctas { display: flex; gap: 12px; flex-wrap: wrap }
   .btn { padding: 12px 20px; border-color: #17141a; box-shadow: 4px 4px 0 #17141a }
   .btn-yel { background: var(--yel) }
@@ -92,7 +92,7 @@
     flex-direction: column;
     gap: 6px;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
   }
   .field input,
   .field textarea {
@@ -116,6 +116,7 @@
   .submit {
     cursor: pointer;
     font: inherit;
+    font-size: 17px;
     font-weight: 700;
     background: oklch(0.85 0.15 145);
     color: #17141a;

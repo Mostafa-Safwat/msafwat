@@ -27,5 +27,5 @@
     gap: 4px;
   }
   .n { font-family: var(--display); font-size: 34px; line-height: 1.1 }
-  .l { color: var(--mut); font-size: 15px; line-height: 1.4 }
+  .l { color: var(--mut); font-size: 17px; line-height: 1.4 }
 </style>

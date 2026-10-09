@@ -57,6 +57,7 @@ export const snipscribe = {
     'Implemented key features including bilingual support (English/Arabic), summary history, community sharing, and a responsive React frontend.',
   ],
   tech: ['NestJS', 'React', 'OpenAI Whisper', 'Qwen3'],
+  repo: 'https://github.com/Mostafa-Safwat/snipscribe',
 }
 
 export const projects = [

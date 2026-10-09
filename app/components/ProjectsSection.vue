@@ -18,7 +18,7 @@
           <div class="tags">
             <span v-for="t in snipscribe.tech" :key="t" class="tag">{{ t }}</span>
           </div>
-          <p class="demo">Demo available on request</p>
+          <a :href="snipscribe.repo" class="repo">GitHub →<span class="sr-only"> (Snipscribe)</span></a>
         </div>
       </div>
     </div>
@@ -106,9 +106,9 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    font-size: 16px;
+    font-size: 18px;
   }
-  .demo { margin: 0; font-weight: 700; color: var(--mut) }
+  .info-meta .repo { align-self: flex-start }
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
@@ -131,7 +131,7 @@
     font-size: 19px;
     line-height: 1.2;
   }
-  .desc { margin: 0; font-size: 15px; color: var(--mut); flex: 1 }
+  .desc { margin: 0; font-size: 17px; color: var(--mut); flex: 1 }
   .tech { font-size: 13px; font-weight: 700 }
   .repo { font-weight: 700 }
 </style>

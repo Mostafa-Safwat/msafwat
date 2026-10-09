@@ -42,6 +42,7 @@
     gap: 20px;
     align-items: center;
     flex-wrap: wrap;
+    font-size: 17px;
     font-weight: 700;
   }
   .logo { font-family: var(--display); margin-right: auto; font-size: 18px }

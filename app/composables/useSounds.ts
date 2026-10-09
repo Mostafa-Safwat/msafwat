@@ -10,29 +10,76 @@ function audio(): AudioContext {
   return ctx
 }
 
-function purr() {
+// The purr is one long-lived voice: petting again while it plays schedules more
+// breaths onto it instead of starting a second, overlapping voice.
+const BREATH = 0.85 // seconds between breaths
+const MIN_PURR = 2.6 // a single pet purrs for at least this long
+const PURR_FALLBACK_MS = MIN_PURR * 1000
+
+type PurrVoice = {
+  src: AudioBufferSourceNode
+  lfo: OscillatorNode
+  breath: GainNode
+  fade: GainNode
+  nextBreath: number
+  end: number
+  stopTimer?: ReturnType<typeof setTimeout>
+}
+let voice: PurrVoice | null = null
+
+function startPurrVoice(ac: AudioContext): PurrVoice {
+  const t = ac.currentTime, sr = ac.sampleRate, n = sr * 2
+  const buf = ac.createBuffer(1, n, sr), ch = buf.getChannelData(0)
+  let last = 0
+  for (let i = 0; i < n; i++) { last = (last + 0.02 * (Math.random() * 2 - 1)) / 1.02; ch[i] = last * 3.5 }
+  // Remove the random walk's drift so the looped buffer has no click at the seam.
+  const drift = ch[n - 1]! - ch[0]!
+  for (let i = 0; i < n; i++) ch[i] = ch[i]! - drift * i / (n - 1)
+  const src = ac.createBufferSource(); src.buffer = buf; src.loop = true
+  const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 220
+  const am = ac.createGain(); am.gain.value = 0.5
+  const lfo = ac.createOscillator(); lfo.frequency.value = 25
+  const lfoG = ac.createGain(); lfoG.gain.value = 0.5
+  lfo.connect(lfoG).connect(am.gain)
+  const breath = ac.createGain(); breath.gain.setValueAtTime(0, t)
+  const fade = ac.createGain()
+  src.connect(lp).connect(am).connect(breath).connect(fade).connect(ac.destination)
+  src.start(t); lfo.start(t)
+  return { src, lfo, breath, fade, nextBreath: t, end: t }
+}
+
+/** Purrs, or extends the current purr. Returns how long the purr will last, in ms. */
+function purr(): number {
   try {
     const ac = audio()
-    const t = ac.currentTime, len = 2.6, sr = ac.sampleRate
-    const buf = ac.createBuffer(1, sr * len, sr), ch = buf.getChannelData(0)
-    let last = 0
-    for (let i = 0; i < ch.length; i++) { last = (last + 0.02 * (Math.random() * 2 - 1)) / 1.02; ch[i] = last * 3.5 }
-    const src = ac.createBufferSource(); src.buffer = buf
-    const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 220
-    const am = ac.createGain(); am.gain.value = 0.5
-    const lfo = ac.createOscillator(); lfo.frequency.value = 25
-    const lfoG = ac.createGain(); lfoG.gain.value = 0.5
-    lfo.connect(lfoG).connect(am.gain)
-    const out = ac.createGain()
-    out.gain.setValueAtTime(0, t)
-    for (const o of [0, 0.85, 1.7]) {
-      out.gain.linearRampToValueAtTime(0.5, t + o + 0.25)
-      out.gain.linearRampToValueAtTime(0.18, t + o + 0.8)
+    const now = ac.currentTime
+    // Start fresh only if there's no purr or it's already fading out.
+    if (!voice || now >= voice.end - 0.1) voice = startPurrVoice(ac)
+    const v = voice
+
+    while (v.end < now + MIN_PURR - 1e-3) {
+      const b = v.nextBreath
+      v.breath.gain.linearRampToValueAtTime(0.5, b + 0.25)
+      v.breath.gain.linearRampToValueAtTime(0.18, b + 0.8)
+      v.nextBreath = b + BREATH
+      v.end = b + 0.9
     }
-    out.gain.linearRampToValueAtTime(0, t + len)
-    src.connect(lp).connect(am).connect(out).connect(ac.destination)
-    src.start(t); lfo.start(t); src.stop(t + len); lfo.stop(t + len)
-  } catch {}
+
+    // Move the fade-out to the new end. It hasn't started yet, so its value is still 1.
+    v.fade.gain.cancelScheduledValues(now)
+    v.fade.gain.setValueAtTime(1, v.end - 0.1)
+    v.fade.gain.linearRampToValueAtTime(0, v.end)
+
+    clearTimeout(v.stopTimer)
+    v.stopTimer = setTimeout(() => {
+      v.src.stop(); v.lfo.stop()
+      if (voice === v) voice = null
+    }, (v.end - now) * 1000 + 100)
+
+    return (v.end - now) * 1000
+  } catch {
+    return PURR_FALLBACK_MS
+  }
 }
 
 function mew() {

@@ -95,8 +95,8 @@
     border: 2.5px solid var(--ink);
   }
   .dot.current { background: var(--pink) }
-  .title { font-weight: 700; font-size: 18px }
-  .dates { color: var(--mut); font-size: 15px }
+  .title { font-weight: 700; font-size: 20px }
+  .dates { color: var(--mut); font-size: 16px }
   .work {
     margin: 0;
     padding-left: 20px;
