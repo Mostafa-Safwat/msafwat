@@ -3,7 +3,7 @@
     type="button"
     class="kitten"
     :title="open ? 'Click to hide' : 'Click me'"
-    :aria-label="open ? 'Hide the kitten' : 'Open the box'"
+    :aria-label="open ? 'Close the fragile box' : 'Open the fragile box'"
     :aria-pressed="open"
     @click="toggle"
   >
@@ -123,7 +123,7 @@
     font-size: 9px;
     font-weight: 700;
     letter-spacing: .08em;
-    color: #8a5a2b;
+    color: #563417;
   }
 
   @media (max-width: 639px) {

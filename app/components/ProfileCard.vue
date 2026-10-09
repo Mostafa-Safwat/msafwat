@@ -4,7 +4,7 @@
     <div class="inner">
       <div class="name">MOSTAFA SAFWAT</div>
       <div class="photo">
-        <img src="/images/mostafa.webp" alt="Portrait of Mostafa Safwat" width="640" height="855">
+        <img src="/images/mostafa.webp" alt="Portrait of Mostafa Safwat" width="640" height="855" fetchpriority="high">
       </div>
       <div class="role">Full Stack Developer</div>
       <div class="stack">TypeScript · Vue · React · NestJS · MySQL</div>

@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="intro">
       <span class="badge">Mostafa Safwat · Asyut, Egypt · Remote</span>
-      <h1 class="title">Full Stack <span class="accent">Developer</span></h1>
+      <h1 class="title"><span class="sr-only">Mostafa Safwat, </span>Full Stack <span class="accent">Developer</span></h1>
       <p class="lead">I build web applications in TypeScript, from the Vue or React frontend to the NestJS backend and the database.</p>
       <div class="ctas">
         <a href="#contact" class="btn btn-pink">Get in touch</a>

@@ -4,10 +4,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-09-30',
   devtools: { enabled: false },
   css: [
-    '@fontsource/dela-gothic-one/400.css',
-    '@fontsource/zen-kaku-gothic-new/400.css',
-    '@fontsource/zen-kaku-gothic-new/500.css',
-    '@fontsource/zen-kaku-gothic-new/700.css',
+    '@fontsource/dela-gothic-one/latin-400.css',
+    '@fontsource/zen-kaku-gothic-new/latin-400.css',
+    '@fontsource/zen-kaku-gothic-new/latin-500.css',
+    '@fontsource/zen-kaku-gothic-new/latin-700.css',
     '~/assets/css/main.css',
   ],
   app: {

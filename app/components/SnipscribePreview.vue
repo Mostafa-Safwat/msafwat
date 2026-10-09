@@ -4,8 +4,8 @@
     <div class="canvas">
       <div class="bar">
         <span class="logo" aria-hidden="true">
-          <img class="logo-light" src="/images/snipscribe/logo-light.webp" alt="" width="218" height="56">
-          <img class="logo-dark" src="/images/snipscribe/logo-dark.webp" alt="" width="218" height="56">
+          <img class="logo-light" src="/images/snipscribe/logo-light.webp" alt="" width="218" height="56" loading="lazy">
+          <img class="logo-dark" src="/images/snipscribe/logo-dark.webp" alt="" width="218" height="56" loading="lazy">
         </span>
         <div class="actions">
           <span class="mui-btn" aria-hidden="true">Start Now</span>
@@ -35,13 +35,13 @@
           <p class="sub">Maximize Efficiency with instant video summaries ideal for</p>
           <div class="roles">
             <span v-for="r in roles" :key="r.label" class="role">
-              <img :src="r.img" alt="" width="32" height="32">{{ r.label }}
+              <img :src="r.img" alt="" width="32" height="32" loading="lazy">{{ r.label }}
             </span>
           </div>
           <span class="mui-btn cta">Upload Your Video Now</span>
         </div>
         <div class="art">
-          <img src="/images/snipscribe/hero.svg" alt="" width="552" height="423">
+          <img src="/images/snipscribe/hero.svg" alt="" width="552" height="423" loading="lazy">
         </div>
       </div>
     </div>
@@ -134,11 +134,11 @@
     background-image: var(--bar-overlay);
     box-shadow: var(--e2);
   }
-  .logo { display: flex }
-  .logo img { width: 218px; height: 56px }
+  .logo { display: grid }
+  .logo img { grid-area: 1 / 1; width: 218px; height: 56px }
   .logo-dark,
-  .dark .logo-light { display: none }
-  .dark .logo-dark { display: block }
+  .dark .logo-light { visibility: hidden }
+  .dark .logo-dark { visibility: visible }
   .actions { display: flex; align-items: center; gap: 16px }
 
   .mui-btn {
