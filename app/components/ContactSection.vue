@@ -48,7 +48,7 @@
       } else if (status === 429) {
         note.value = "That's a lot of messages in a short time. Please wait a few minutes and try again."
       } else {
-        note.value = 'Something went wrong. Please try again later, or message me on LinkedIn.'
+        note.value = `Something went wrong. Please try again later, or email me at ${links.email}.`
       }
     } finally {
       sending.value = false

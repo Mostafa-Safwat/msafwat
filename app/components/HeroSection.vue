@@ -12,6 +12,7 @@
       <div class="socials">
         <a :href="links.linkedin">LinkedIn</a>
         <a :href="links.github" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+        <a :href="`mailto:${links.email}`">Email</a>
       </div>
     </div>
     <div class="card-wrap">

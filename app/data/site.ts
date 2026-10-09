@@ -1,6 +1,7 @@
 export const links = {
   linkedin: 'https://www.linkedin.com/in/mostafa-safwat-95198323b',
   github: 'https://github.com/Mostafa-Safwat',
+  email: 'mostafasafwat404@gmail.com',
   cv: '/cv.pdf',
 }
 
@@ -11,14 +12,14 @@ export const nav = [
 ]
 
 export const stats = [
-  { n: '218', l: 'pull requests merged at Jimber, about 25% of all merged PRs on the platform since June 2025' },
+  { n: '218', l: 'pull requests merged at Jimber, about a quarter of all merged PRs on the platform since June 2025' },
   { n: 'About 30%', l: 'of the tickets in a product release' },
   { n: 'About half', l: 'of the Playwright end-to-end test suite' },
 ]
 
 export const about = [
-  "I'm a ==full stack developer working in TypeScript==, with production experience across a Vue frontend, a NestJS (Node.js) backend and a MySQL database with Prisma.",
-  'At Jimber, a Belgian security company building a SASE platform, I ==merged 218 pull requests, about a quarter of all merged PRs== on the platform since June 2025, shipped about 30% of the tickets in a product release, and wrote ==about half of its Playwright end-to-end test suite==.',
+  "I'm a full stack developer working in TypeScript, with production experience across ==a Vue 3 frontend, a NestJS (Node.js) backend and a MySQL database with Prisma==.",
+  'At Jimber, a Belgian security company building a SASE platform, I merged 218 pull requests, about a quarter of all merged PRs on the platform since June 2025, shipped about 30% of the tickets in a product release, and wrote about half of its Playwright end-to-end test suite.',
   'My graduation project, Snipscribe, transcribes, summarizes and translates YouTube videos using ==OpenAI Whisper and the Qwen3 LLM==, with a NestJS backend and a React frontend in English and Arabic.',
   'I graduated from EELU in 2025 with a degree in Computers and Information Technology.',
 ]
@@ -32,7 +33,7 @@ export const jimber = {
     { title: 'Intern', dates: 'Jun 2025 – Aug 2025', current: false },
   ],
   work: [
-    'Worked in TypeScript across a Vue frontend, a NestJS backend and a MySQL database (Prisma).',
+    'Worked in TypeScript across a Vue 3 frontend, a NestJS backend and a MySQL database (Prisma).',
     'Merged 218 pull requests, about a quarter of all merged PRs on the platform since June 2025.',
     'Shipped about 30% of the tickets in a product release.',
     'Wrote about half of the Playwright end-to-end test suite, covering firewall policies, users and customers, network settings (DHCP, WAN load balancing), web filtering and EDR.',
@@ -40,9 +41,9 @@ export const jimber = {
     'Built the security assessment feature, including monthly scheduling and PDF reports.',
     'Added CSV export to every monitoring page, streaming large exports in batches and protecting against CSV injection.',
     "Built a GitHub App on my own (NestJS, GitHub GraphQL API) that updates the team's project board from webhooks: moving issues to In review when a pull request asks for review, sending unassigned issues back to Ready, and grouping notifications into one comment.",
-    'Set up a nightly release staging environment, refactored the preprod workflow, and added pull request lint checks (commitlint, YAML lint).',
+    'Set up a nightly release staging environment, refactored the preprod GitHub Actions workflow, and added pull request lint checks (commitlint, YAML lint).',
   ],
-  tech: ['TypeScript', 'Vue', 'NestJS', 'MySQL', 'Prisma', 'Playwright', 'Docker', 'CI/CD', 'GitHub GraphQL API'],
+  tech: ['TypeScript', 'Vue 3', 'NestJS', 'MySQL', 'Prisma', 'Playwright', 'Docker', 'GitHub Actions', 'GitHub GraphQL API'],
 }
 
 export const snipscribe = {
@@ -65,11 +66,11 @@ export const projects = [
 ]
 
 export const skills = [
-  { k: 'Frontend', v: 'Vue, React, TypeScript, JavaScript, HTML/CSS, Tailwind CSS' },
+  { k: 'Frontend', v: 'Vue 3, React, TypeScript, JavaScript, HTML/CSS, Tailwind CSS' },
   { k: 'Backend', v: 'NestJS, Node.js, Python (Flask, Django), PHP' },
   { k: 'Databases', v: 'MySQL, PostgreSQL, Prisma' },
   { k: 'Testing', v: 'Playwright (end-to-end)' },
-  { k: 'Tools', v: 'Docker, CI/CD, Git, GitHub, Linux, Bash' },
+  { k: 'Tools', v: 'Docker, CI/CD (GitHub Actions), Git, GitHub, Linux, Bash' },
   { k: 'AI coding tools', v: 'Claude, GitHub Copilot, Codex' },
   { k: 'Other languages', v: 'Java, C, SQL, R' },
 ]
