@@ -11,15 +11,14 @@ export const nav = [
 ]
 
 export const stats = [
-  { n: '218', l: 'pull requests merged at Jimber, about 25% of all merged PRs on the platform' },
+  { n: '218', l: 'pull requests merged at Jimber, about 25% of all merged PRs on the platform since June 2025' },
   { n: 'About 30%', l: 'of the tickets in a product release' },
   { n: 'About half', l: 'of the Playwright end-to-end test suite' },
 ]
 
-// ==text== is drawn with a highlighter mark.
 export const about = [
   "I'm a ==full stack developer working in TypeScript==, with production experience across a Vue frontend, a NestJS (Node.js) backend and a MySQL database with Prisma.",
-  'At Jimber, a Belgian security company building a SASE platform, I ==merged 218 pull requests, about a quarter of all merged PRs== on the platform, shipped about 30% of the tickets in a product release, and wrote ==about half of its Playwright end-to-end test suite==.',
+  'At Jimber, a Belgian security company building a SASE platform, I ==merged 218 pull requests, about a quarter of all merged PRs== on the platform since June 2025, shipped about 30% of the tickets in a product release, and wrote ==about half of its Playwright end-to-end test suite==.',
   'My graduation project, Snipscribe, transcribes, summarizes and translates YouTube videos using ==OpenAI Whisper and the Qwen3 LLM==, with a NestJS backend and a React frontend in English and Arabic.',
   'I graduated from EELU in 2025 with a degree in Computers and Information Technology.',
 ]
