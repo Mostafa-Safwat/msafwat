@@ -40,10 +40,10 @@ export const jimber = {
     'Built the EDR whitelist feature across the stack (validation, API and UI, plus adding items straight from the monitoring page), the malicious file detection UI, and a redesign of the EDR monitoring page.',
     'Built the security assessment feature, including monthly scheduling and PDF reports.',
     'Added CSV export to every monitoring page, streaming large exports in batches and protecting against CSV injection.',
-    "Built a GitHub App on my own (NestJS, GitHub GraphQL API) that updates the team's project board from webhooks: moving issues to In review when a pull request asks for review, sending unassigned issues back to Ready, and grouping notifications into one comment.",
+    "Built a GitHub App on my own (NestJS, GitHub GraphQL API) that updates the team's project board from webhooks: moving issues to In review when a pull request asks for review, sending unassigned issues back to Ready, and grouping notifications into one comment. Deployed it to a cloud VPS with Docker Compose, Traefik (HTTPS) and a CI/CD pipeline.",
     'Set up a nightly release staging environment, refactored the preprod GitHub Actions workflow, and added pull request lint checks (commitlint, YAML lint).',
   ],
-  tech: ['TypeScript', 'Vue 3', 'NestJS', 'MySQL', 'Prisma', 'Playwright', 'Docker', 'GitHub Actions', 'GitHub GraphQL API'],
+  tech: ['TypeScript', 'Vue 3', 'NestJS', 'MySQL', 'Prisma', 'Playwright', 'Docker', 'Docker Compose', 'Traefik', 'GitHub Actions', 'GitHub GraphQL API'],
 }
 
 export const snipscribe = {
@@ -70,7 +70,7 @@ export const skills = [
   { k: 'Backend', v: 'NestJS, Node.js, Python (Flask, Django), PHP' },
   { k: 'Databases', v: 'MySQL, PostgreSQL, Prisma' },
   { k: 'Testing', v: 'Playwright (end-to-end)' },
-  { k: 'Tools', v: 'Docker, CI/CD (GitHub Actions), Git, GitHub, Linux, Bash' },
+  { k: 'Tools', v: 'Docker, Docker Compose, Traefik, CI/CD (GitHub Actions), Git, GitHub, Linux, Bash' },
   { k: 'AI coding tools', v: 'Claude, GitHub Copilot, Codex' },
   { k: 'Other languages', v: 'Java, C, SQL, R' },
 ]
