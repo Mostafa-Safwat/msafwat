@@ -29,7 +29,7 @@ export const jimber = {
   blurb: 'A Belgian security company building a SASE platform.',
   when: 'Remote · Jun 2025 – Present',
   roles: [
-    { title: 'Junior Full Stack Developer', dates: 'Sep 2025 – Present', current: true },
+    { title: 'Full Stack Developer', dates: 'Sep 2025 – Present', current: true },
     { title: 'Intern', dates: 'Jun 2025 – Aug 2025', current: false },
   ],
   work: [
@@ -45,6 +45,30 @@ export const jimber = {
   ],
   tech: ['TypeScript', 'Vue 3', 'NestJS', 'MySQL', 'Prisma', 'Playwright', 'Docker', 'Docker Compose', 'Traefik', 'GitHub Actions', 'GitHub GraphQL API'],
 }
+
+export const recommendations = [
+  {
+    quote: [
+      "I've worked with Mostafa for about a year and a half, starting with his internship. From early on, he showed that he could work independently and take ownership of his work, including areas such as end-to-end test automation.",
+      'Over time, he became proactive and confident in solving problems on his own, while also knowing when to ask for input.',
+      'It was great to see his growth from intern to developer and to work with him throughout that process.',
+    ],
+    name: 'Alexander Mol',
+    role: 'Senior developer at Jimber',
+    link: `${links.linkedin}/details/recommendations/`,
+  },
+  {
+    quote: [
+      'I had the pleasure of working with Mostafa on our SASE platform, and saw him grow into a vital role building and maintaining the product.',
+      "From a product perspective, Mostafa didn't just build features: he thought beyond the specs he received and challenged me by asking questions I hadn't thought of at the time.",
+      'His problem-solving mindset, reliability, and proactive communication make him a huge asset to any team. He also took ownership of writing comprehensive E2E tests to ensure our releases were stable, reliable, and user-ready.',
+      'I highly recommend Mostafa to anyone looking for a skilled, dependable, and thorough Full Stack Developer!',
+    ],
+    name: 'Rani Devriendt',
+    role: 'Product owner at Jimber',
+    link: `${links.linkedin}/details/recommendations/`,
+  },
+]
 
 export const snipscribe = {
   label: 'Featured · Graduation project',

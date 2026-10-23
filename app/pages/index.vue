@@ -5,6 +5,7 @@
     <StatsRow />
     <AboutSection />
     <ExperienceSection />
+    <RecommendationsSection />
     <ProjectsSection />
     <SkillsSection />
     <EducationSection />
