@@ -2,7 +2,8 @@
   <section class="recommendations">
     <h2 class="h2">Testimonials</h2>
     <div class="quotes">
-      <figure v-for="r in recommendations" :key="r.name" class="quote">
+      <figure v-for="(r, i) in recommendations" :key="r.name" class="quote">
+        <PushPin :color="pins[i % pins.length]!" />
         <span class="mark" aria-hidden="true">“</span>
         <blockquote class="text">
           <p v-for="p in r.quote" :key="p">{{ p }}</p>
@@ -19,6 +20,8 @@
 
 <script setup lang="ts">
   import { recommendations } from '~/data/site'
+
+  const pins = ['#e0503a', '#1d86c8']
 </script>
 
 <style scoped>
@@ -33,6 +36,7 @@
     gap: 28px;
   }
   .quote {
+    position: relative;
     margin: 0;
     background: var(--card);
     border: 2.5px solid var(--ink);
@@ -58,7 +62,6 @@
     text-wrap: pretty;
   }
   .text p { margin: 0 }
-  /* Pushes the name to the bottom so both cards line up when one quote is shorter. */
   .who {
     margin-top: auto;
     padding-top: 14px;
