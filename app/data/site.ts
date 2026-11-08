@@ -76,9 +76,10 @@ export const snipscribe = {
   points: [
     'Developed a full-stack web platform that transcribes, summarizes, and translates YouTube videos using state-of-the-art AI models: OpenAI Whisper for transcription and Qwen3 LLM for summarization and translation.',
     'Built a NestJS backend and integrated email/in-app notifications to enhance user engagement.',
+    "Wrote all of the app's code on my own, including a Python worker that runs the AI jobs outside the API. It picks up pending summaries from the database, downloads the audio with pytubefix, transcribes it with Whisper and summarizes it with Qwen3 running locally in Ollama.",
     'Implemented key features including bilingual support (English/Arabic), summary history, community sharing, and a responsive React frontend.',
   ],
-  tech: ['NestJS', 'React', 'OpenAI Whisper', 'Qwen3'],
+  tech: ['NestJS', 'React', 'Python', 'OpenAI Whisper', 'Qwen3'],
   repo: 'https://github.com/Mostafa-Safwat/snipscribe',
 }
 
