@@ -29,8 +29,8 @@ export const jimber = {
   blurb: 'A Belgian security company building a SASE platform.',
   when: 'Remote · Jun 2025 – Present',
   roles: [
-    { title: 'Full Stack Developer', dates: 'Sep 2025 – Present', current: true },
-    { title: 'Intern', dates: 'Jun 2025 – Aug 2025', current: false },
+    { title: 'Full Stack Developer', dates: 'Oct 2025 – Present', current: true },
+    { title: 'Intern', dates: 'Jun 2025 – Sep 2025', current: false },
   ],
   work: [
     'Worked in TypeScript across a Vue 3 frontend, a NestJS backend and a MySQL database (Prisma).',
